@@ -17,17 +17,14 @@ public class PlayerHealt : MonoBehaviour
         currentHealth += amount;
         Updatebar();
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
-
     }
 
     void Updatebar()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
     }
-
-    
 }
