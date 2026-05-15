@@ -17316,6 +17316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   damage: 1
+  player: {fileID: 1456489545}
 --- !u!114 &1252350951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18889,8 +18890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a351a2e4cd39d44abacdb3ea64d1ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealt
-  maxHealth: 3
-  currentHealth: 3
+  maxHealth: 10
+  currentHealth: 10
   healthBar: {fileID: 1848130365}
 --- !u!1 &1459380875
 GameObject:

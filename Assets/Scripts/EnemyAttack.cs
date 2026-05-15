@@ -14,14 +14,6 @@ public class EnemyAttack : MonoBehaviour
         self = GetComponent<EnemyMovement>();
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Player")
-    //     {
-    //         collision.gameObject.GetComponent<PlayerHealt>().ChangeHealth(-damage);
-    //     }
-    // }
-
     public void Attack()
     {
         if (self.Chase())
@@ -32,8 +24,9 @@ public class EnemyAttack : MonoBehaviour
                 return;
             }
             isAttacking = true;
-            Debug.Log("attack");
+            Debug.Log("attack " + player.GetComponent<PlayerHealt>().GetHealth());
             player.GetComponent<PlayerHealt>().ChangeHealth(-damage);
+            player.GetComponent<PlayerMovement>().Knockback(transform, 10, .2f);
         }
     }
 

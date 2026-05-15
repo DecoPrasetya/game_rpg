@@ -76,6 +76,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Attack()
     {
+        if (target.GetComponent<PlayerHealt>().GetHealth() <= 0)
+        {
+            state = EnemyState.Idle;
+            return;
+        }
         rb.velocity = Vector2.zero;
         anim.SetBool("attack", true);
     }
@@ -95,22 +100,6 @@ public class EnemyMovement : MonoBehaviour
             state = EnemyState.Idle;
         }
     }
-
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Player")
-    //     {
-    //         state = EnemyState.Attack;
-    //     }
-    // }
-
-    // private void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Player")
-    //     {
-    //         state = EnemyState.Chase;
-    //     }
-    // }
 
     void Flip()
     {
